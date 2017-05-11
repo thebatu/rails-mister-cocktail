@@ -1,5 +1,5 @@
 class DosesController < ApplicationController
-  #before_action :dose_id, only: [:show, :destroy]
+  before_action :set_dose, only: [:show, :destroy]
   before_action :set_cocktail
 
   def index
@@ -42,7 +42,7 @@ class DosesController < ApplicationController
     params.require(:dose).permit(:description, :cocktail_id, :ingredient_id)
   end
 
-  def dose_id
+  def set_dose
     @dose = Dose.find(params[:id])
   end
 

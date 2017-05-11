@@ -35,7 +35,10 @@ class CocktailsController < ApplicationController
   end
 
   def set_cocktail
-    @cocktail = Cocktail.includes(doses: :ingredient).find(params[:id])
+    @cocktail = Cocktail.find(params[:id])
+    #optimized query
+    # @cocktail = Cocktail.includes(doses: :ingredient).find(params[:id])
+
   end
 
 end
