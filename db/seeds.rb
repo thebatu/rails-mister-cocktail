@@ -9,11 +9,11 @@
 Ingredient.destroy_all
 Cocktail.destroy_all
 
-puts "Seeding"
+puts "Seeding ...."
 
 ingredients = %w(lemon ice mint leaves redbull jagermeister sugar tonic gin rhum)
 ingredients.each { |ingredient| Ingredient.create(name: ingredient) }
 
 
-cocktails = %w(Mai_Tai bloody_mary )
-cocktails.each { |cocktail| Cocktail.create(name: cocktail) }
+# cocktails = %w(Mai_Tai bloody_mary )
+# cocktails.each { |cocktail| Cocktail.create(name: cocktail) }

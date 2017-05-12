@@ -8,10 +8,12 @@
       <%= link_to 'Back', cocktails_path %>
 
       <ul>
-        <% @cocktail.doses.each do |dose| %>
+         <% @cocktail.doses.each do |dose| %> <!-- DOSES are plurial cow a cocktail has many doses -->
           <li>
             <%= dose.description %> of <%= dose.ingredient.name %>
-            (<%= link_to "delete", cocktail_dose_path(@cocktail, dose), method: :delete %>)
+            <%= link_to 'Delete', dose_path(dose), method: :delete %>
+
+
           </li>
         <% end %>
       </ul>
