@@ -6,8 +6,13 @@
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-sm-4 col-md-4">
-        <div class="text-center card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('../../assets/images/cocktail.jpg');">
-            <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        <% if cocktail.photo? %>
+           <div class="text-center card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>');">
+        <% else %>
+        <div class="text-center card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path("san_francisco_drdfvx",
+              width: 400, height: 300, crop: :fill) %>');">
+        <% end %>
+        <%= link_to cocktail.name, cocktail_path(cocktail), class: "card-link" %>
             <!-- <%= link_to cocktail.name, cocktail %> another way of passing the instance ID -->
         </div>
       </div>
