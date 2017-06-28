@@ -1,4 +1,19 @@
 <h1 class="text-center">Your cocktail list</h1>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <%=image_tag("cocktail2.jpg", :alt => "First slide")%>
+    </div>
+    <div class="item">
+      <%=image_tag("water.jpg", :alt => "First slide")%>
+    </div>
+    <div class="item">
+       <%=image_tag("drink.jpg", :alt => "First slide")%>
+    </div>
+  </div>
+</div>
+
 <div class="text-center padded">
   <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary" %>
 </div>

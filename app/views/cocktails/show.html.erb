@@ -1,6 +1,3 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
-
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
@@ -8,14 +5,11 @@
       <div><%= link_to 'Back', cocktails_path %></div>
       <div><%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %></div>
 
-
       <ul>
-         <% @cocktail.doses.each do |dose| %> <!-- DOSES are plurial cow a cocktail has many doses -->
+         <% @cocktail.doses.each do |dose| %> <!-- DOSES are plurial coz a cocktail has many doses -->
           <li>
             <%= dose.description %> of <%= dose.ingredient.name %>
             <%= link_to 'Delete', dose_path(dose), method: :delete %>
-
-
           </li>
         <% end %>
       </ul>
